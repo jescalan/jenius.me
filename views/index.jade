@@ -1,22 +1,25 @@
 extends layout
 
-block content
-
+block nav
   header
     img(src='/img/logo.svg')
     h1 Jeff Escalante
 
-  nav
+  nav.main
     ul
       li
         a(href='about.html')
-        h2 about
+          .icon
+          h2 about
       li
         a(href='work.html')
-        h2 work
+          .icon
+          h2 work
       li
         a(href='writing.html')
-        h2 writing
+          .icon
+          h2 writing
       li
         a(href='contact.html')
-        h2 contact
+          .icon
+          h2 contact

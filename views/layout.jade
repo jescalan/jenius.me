@@ -7,11 +7,15 @@ html
     meta(name='author', content= "author of the site")
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title Jeff Escalante | Design, Code, Love
+    script(src='/js/modernizr.min.js')
     link(rel='stylesheet', href='css/master.css')
     script(src="//use.typekit.net/tbp0vty.js")
     script.
       try{Typekit.load();}catch(e){}
   body
+    block main
+    block nav
     block content
 
-  script(data-main="js/main", src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.5/require.min.js")
+  script(src='//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js')
+  script(src='/js/main.js')
