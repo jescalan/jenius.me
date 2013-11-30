@@ -12,10 +12,12 @@ html
     script(src="//use.typekit.net/tbp0vty.js")
     script.
       try{Typekit.load();}catch(e){}
-  body
+
+  body(id="#{path.match(/.*\/(\w+)\.html$/) && path.match(/.*\/(\w+)\.html$/)[1]}")
     block main
     block nav
-    block content
+    #main
+      block content
 
   script(src='//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js')
   script(src='/js/main.js')

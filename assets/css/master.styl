@@ -10,131 +10,67 @@ body
   font-family: freight-sans-pro, helvetica
   padding: 50px
 
-header
-  text-align: center
-  margin-top: 30px
+#main
+  group()
+  max-width: 600px
+  margin: 50px auto
+  font-size: 1.1em
+  line-height: 1.6em
+  animation: 2s main-adjust
+  color: #B0B0B0
 
-  &.out
-    animation: .3s header-out
-    animation-delay: .5s
-
-  img
-    max-width: 80px
-    opacity: .9
-    animation: 1s spin ease-out-quad
-
-  h1
-    upcase()
-    margin: 1em 0
-    font-size: 1.3em
+  a
+    link: #fff
     font-weight: 600
-    opacity: .6
 
-nav.main ul
-  inline-list: 119px
-  max-width: 700px
-  margin: 120px auto
+#about, #work, #writing, #contact
 
-  @media only screen and (max-width: 815px)
-    max-width: 290px
+  header-spacing = 70px
 
-  @media only screen and (max-width: 415px)
-    max-width: 240px
-
-  @media only screen and (max-width: 350px)
-    max-width: 205px
-    margin-top: 80px
-
-  li
+  header
+    group()
     text-align: center
-    margin-bottom: 30px
+    animation: .7s header-in
 
-    @media only screen and (max-width: 815px)
-      &:nth-child(2n)
+    img
+      max-width: 47px
+      margin-right: header-spacing
+      display: inline-block
+      margin-bottom: -7px
+      animation: .7s spin ease-out-cubic
+      animation-delay: .25s
+
+      @media only screen and (max-width: 706px)
+        margin-bottom: 30px
         margin-right: 0
 
-    @media only screen and (max-width: 415px)
-      margin-right: 70px
+    nav
+      display: inline-block
 
-    @media only screen and (max-width: 350px)
-      margin-right: 63px
+      ul
+        inline-list: header-spacing
+        font-size: 1.2em
+        upcase()
 
-    a
-      display: block
-      text-decoration: none
-      transition: .1s ease
+        li
+          @media only screen and (max-width: 600px)
+            margin-right: 40px
 
-      &:active
-        margin-top: 5px
-
-    .icon
-      size: 85px
-      background-size: cover
-      opacity: .3
-      transition()
-
-      @media only screen and (max-width: 350px)
-        size: 65px
-
-    h2
-      color: white
-      font-weight: 700
-      font-size: 1em
-      upcase()
-      opacity: 0
-      transition()
-      margin-top: 1.6em
-      border: none
-
-      @media only screen and (max-width: 550px)
+      a
+        text-decoration: none
+        color: #fff
+        font-weight: 600
         opacity: .2
-        margin-top: 1em
+        transition()
 
-    &:nth-child(1)
-      animation: 1s in1
+        &:hover
+          opacity: .5
 
-      &.out
-        animation: .8s out
+#about nav li:nth-child(1) a
+#work nav li:nth-child(2) a
+#writing nav li:nth-child(3) a
+#contact nav li:nth-child(4) a
+  opacity: .5
 
-      .icon
-        background-image: url('/img/about.svg')
-
-    &:nth-child(2)
-      animation: 1.3s in2
-
-      &.out
-        animation: .8s out
-        animation-delay: .1s
-
-      .icon
-        background-image: url('/img/work.svg')
-
-    &:nth-child(3)
-      animation: 1.6s in3
-
-      &.out
-        animation: .8s out
-        animation-delay: .2s
-
-      .icon
-        background-image: url('/img/writing.svg')
-
-    &:nth-child(4)
-      animation: 1.9s in4
-
-      &.out
-        animation: .8s out
-        animation-delay: .3s
-
-      .icon
-        background-image: url('/img/contact.svg')
-
-    &:hover
-
-      .icon
-        opacity: .4
-
-      h2
-        opacity: .2
-        margin-top: 1em
-
+@import '_index'
+@import '_about'

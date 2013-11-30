@@ -7,10 +7,10 @@ $ ->
     return
 
   # smooth page transition
-  $('.main a').on 'click', ->
+  $('#index nav a').on 'click', ->
     if Modernizr.cssanimations
       $('body').css('overflow', 'hidden')
-      $('.main a').parent().addClass('out')
+      $('nav a').parent().addClass('out')
       $('header').addClass('out')
       setTimeout (=> window.location.href = $(@).attr('href')), 800
       false
